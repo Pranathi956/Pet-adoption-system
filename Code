@@ -1,0 +1,717 @@
+#include <iostream>  
+
+#include <string>  
+
+using namespace std;  
+
+class Pet {  
+
+protected:  
+
+    string age;  
+
+    string size;  
+
+    string color;  
+
+    string lifespan;  
+
+    string gender;  
+
+public:  
+
+    Pet(string age, string size, string color, string lifespan, string gender) 
+
+        : age(age), size(size), color(color), lifespan(lifespan), gender(gender) {}  
+
+    virtual void displayInitialInfo() = 0;   
+
+    virtual void displayAdditionalInfo() = 0;   
+
+    virtual double getPrice() = 0;   
+
+};  
+
+class Dog : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string healthStatus;  
+
+    string personalityTraits;  
+
+    string trainingLevel;  
+
+    string adoptionRequirements;  
+
+    string groomingNeeds;  
+
+public:  
+
+    Dog(string breed, string age, string size, string color, string lifespan, string gender, double price, string healthStatus, string personalityTraits,  
+
+        string trainingLevel, string adoptionRequirements, string groomingNeeds)  
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), healthStatus(healthStatus), personalityTraits(personalityTraits),  
+
+trainingLevel(trainingLevel), adoptionRequirements(adoptionRequirements), groomingNeeds(groomingNeeds) {}  
+
+    void displayInitialInfo() override {  
+
+        cout << "Dog Breed: " << breed << endl;  
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+             << ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Health Status: " << healthStatus << endl;  
+
+        cout << "Personality Traits: " << personalityTraits << endl;  
+
+        cout << "Training Level: " << trainingLevel << endl;  
+
+        cout << "Adoption Requirements: " << adoptionRequirements << endl;  
+
+        cout << "Grooming Needs: " << groomingNeeds << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+class Cat : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string healthStatus;  
+
+    string personalityTraits;  
+
+    string trainingLevel;  
+
+    string adoptionRequirements;  
+
+    string groomingNeeds; 
+
+    string pattern; 
+
+    string dietaryPreferences;  
+
+public:  
+
+    Cat(string breed, string age, string size, string color, string lifespan, string gender, double price, string healthStatus, string personalityTraits,  
+
+        string trainingLevel, string adoptionRequirements, string groomingNeeds,string pattern, string dietaryPreferences)  
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), 
+
+          healthStatus(healthStatus), personalityTraits(personalityTraits),  
+
+trainingLevel(trainingLevel), adoptionRequirements(adoptionRequirements),  groomingNeeds(groomingNeeds), pattern(pattern), dietaryPreferences(dietaryPreferences) {}  
+
+    void displayInitialInfo() override {  
+
+        cout << "Cat Breed: " << breed << endl;  
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+             << ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Health Status: " << healthStatus << endl;  
+
+        cout << "Personality Traits: " << personalityTraits << endl;  
+
+        cout << "Training Level: " << trainingLevel << endl;  
+
+        cout << "Adoption Requirements: " << adoptionRequirements << endl;  
+
+        cout << "Grooming Needs: " << groomingNeeds << endl;  
+
+        cout << "Pattern: " << pattern << endl;  
+
+        cout << "Dietary Preferences: " << dietaryPreferences << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+class Fish : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string waterType;  
+
+    string dietaryRequirements;  
+
+    string pattern;  
+
+public:  
+
+    Fish(string breed, string age, string size, string color, string lifespan, string gender, double price, string waterType, string dietaryRequirements, string pattern) 
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), 
+
+          waterType(waterType), dietaryRequirements(dietaryRequirements), pattern(pattern) {}  
+
+    void displayInitialInfo() override {  
+
+        cout << "Fish Breed: " << breed << endl;  
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+             << ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Water Type: " << waterType << endl;  
+
+        cout << "Dietary Requirements: " << dietaryRequirements << endl;  
+
+        cout << "Pattern: " << pattern << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+class Bird : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string noiseLevel;  
+
+    string dietaryPreferences;  
+
+public:  
+
+    Bird(string breed, string age, string size, string color, string lifespan, string gender, double price, string noiseLevel, string dietaryPreferences)  
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), 
+
+          noiseLevel(noiseLevel), dietaryPreferences(dietaryPreferences) {}  
+
+  
+
+    void displayInitialInfo() override {  
+
+        cout << "Bird Breed: " << breed << endl;  
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+             << ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Noise Level: " << noiseLevel << endl;  
+
+        cout << "Dietary Preferences: " << dietaryPreferences << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+class Turtle : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string pondSize;  
+
+    string dietaryPreferences;  
+
+public:  
+
+    Turtle(string breed, string age, string size, string color, string lifespan, string gender, double price, string pondSize, string dietaryPreferences)  
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), 
+
+          pondSize(pondSize), dietaryPreferences(dietaryPreferences) {}  
+
+    void displayInitialInfo() override {  
+
+        cout << "Turtle Breed: " << breed << endl;  
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+             << ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Pond Size: " << pondSize << endl;  
+
+        cout << "Dietary Preferences: " << dietaryPreferences << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+class Tortoise : public Pet {  
+
+private:  
+
+    string breed;  
+
+    double price;  
+
+    string cageSize; 
+
+public: 
+
+    Tortoise(string breed, string age, string size, string color, string lifespan, string gender, double price, string cageSize)  
+
+        : Pet(age, size, color, lifespan, gender), breed(breed), price(price), 
+
+          cageSize(cageSize) {}  
+
+    void displayInitialInfo() override { 
+
+        cout << "Tortoise Breed: " << breed << endl; 
+
+        cout << "Age: " << age << ", Size: " << size << ", Color: " << color  
+
+<< ", Lifespan: " << lifespan << ", Gender: " << gender << endl;  
+
+    }  
+
+    void displayAdditionalInfo() override {  
+
+        cout << "Cage Size: " << cageSize << endl;  
+
+    }  
+
+    double getPrice() override {  
+
+        return price;  
+
+    }  
+
+};  
+
+Pet* createPet() {  
+
+    int petChoice; 
+
+    cout << "\nThanks for choosing to open your heart and home to a new friend...\n" << endl;  
+
+    cout << "Which pet do you want to choose?\n 1: Dog\n 2: Cat\n 3: Fish\n 4: Bird\n 5: Turtle\n 6: Tortoise\n 0: Exit\n ";  
+
+    cin >> petChoice;  
+
+    if (petChoice == 1) {   
+
+        cout << "Choose a breed:\n 1. Golden Retriever\n 2. German Shepherd\n 3. Beagle\n 4. Labrador Retriever\n";  
+
+        int breedChoice;  
+
+        cin >> breedChoice;  
+
+        string breed; 
+
+        switch (breedChoice) {  
+
+  
+
+            case 1:  
+
+                breed = "Golden Retriever"; 
+
+                return new Dog(breed, "2 years", "Large", "Golden", "10-12 years", "Male",500, "Healthy", "Friendly, Loyal", "High", "Fenced yard", "Regular brushing");  
+
+            case 2: 
+
+                breed = "German Shepherd"; 
+
+                return new Dog(breed, "3 years", "Large", "Black and Tan", "9-13 years", "Female",700, "Healthy", "Intelligent, Protective", "High", "Fenced yard", "Regular grooming"); 
+
+            case 3: 
+
+                breed = "Beagle"; 
+
+                return new Dog(breed, "4 years", "Medium", "Tri-color", "10-15 years", "Male",300, "Healthy", "Curious, Friendly", "Medium", "Fenced yard", "Weekly grooming");  
+
+            case 4:  
+
+                breed = "Labrador Retriever";   
+
+                return new Dog(breed, "5 years", "Large", "Chocolate", "10-12 years", "Female",600, "Healthy", "Friendly, Energetic", "High", "Active lifestyle", "Regular brushing");  
+
+            default:   
+
+                return nullptr;  
+
+        }  
+
+    } else if (petChoice == 2) {   
+
+        cout << "Choose a breed:\n 1. Persian\n 2. Indian Billi\n 3. Russian Blue\n 4. Ragdoll\n "; 
+
+        int breedChoice;  
+
+        cin >> breedChoice;  
+
+        string breed;  
+
+        switch (breedChoice) { 
+
+            case 1: 
+
+                breed = "Persian"; 
+
+                return new Cat(breed, "5 months", "Medium", "White", "12-15 years", "Female",300, "Healthy", "Affectionate, Quiet", "Low", "Indoor only", "Daily brushing", "Solid", "High-protein diet"); 
+
+            case 2: 
+
+                breed = "Indian Billi"; 
+
+                return new Cat(breed, "0.5 years", "Medium", "Brown", "10-15 years", "Male",150, "Healthy", "Playful, Curious", "Medium", "Indoor/outdoor", "Regular grooming", "Spotted", "Varied diet"); 
+
+            case 3:  
+
+                breed = "Russian Blue";  
+
+                return new Cat(breed, "1 year", "Medium", "Gray", "15 years", "Female",500, "Healthy", "Loyal, Gentle", "Medium", "Indoor only", "Weekly grooming", "Solid", "High-protein diet"); 
+
+            case 4:  
+
+                breed = "Ragdoll"; 
+
+                return new Cat(breed, "8 months", "Large", "Blue", "12-15 years", "Male", 600, "Healthy", "Docile, Affectionate", "Low", "Indoor only", "Daily brushing", "Colorpoint", "High-protein diet");  
+
+            default:   
+
+                return nullptr;  
+
+        }  
+
+    } else if (petChoice == 3) {   
+
+        cout << "Choose a breed:\n 1. Tetras\n 2. Betta\n 3. Angel\n 4. Goldfish\n ";  
+
+        int breedChoice;  
+
+        cin >> breedChoice;  
+
+        string breed; 
+
+        switch (breedChoice) { 
+
+            case 1:  
+
+                breed = "Tetras"; 
+
+                return new Fish(breed, "2 months", "Small", "Multi-colored", "2-4 years", "Male",15, "Freshwater", "Flakes and pellets", "Colorful fins"); 
+
+            case 2: 
+
+                breed = "Betta";  
+
+                return new Fish(breed, "0.5 years", "Small", "Blue", "3-5 years", "Male",20, "Freshwater", "Specialized pellets", "Flowing fins"); 
+
+            case 3: 
+
+                breed = "Angel"; 
+
+                return new Fish(breed, "4 months", "Medium", "Black and White", "3-4 years", "Female",30, "Freshwater", "Flakes and pellets", "Elegant fins");  
+
+            case 4:   
+
+                breed = "Goldfish";   
+
+                return new Fish(breed, "2 months", "Medium", "Orange", "2-3 years", "Male",10, "Freshwater", "Goldfish pellets", "Bright coloration");  
+
+            default:   
+
+                return nullptr;  
+
+        }  
+
+    } else if (petChoice == 4) {   
+
+        cout << "Choose a category:\n 1. Flying:\n 2. Aquatic: ";  
+
+        int categoryChoice;  
+
+        cin >> categoryChoice;  
+
+        string breed;  
+
+        if (categoryChoice == 1) {  
+
+            cout << "Choose a breed:\n 1. Cockatoo\n 2. Finch\n 3. Budgie ";  
+
+            int breedChoice;  
+
+            cin >> breedChoice;  
+
+            switch (breedChoice) {  
+
+  
+
+                case 1:   
+
+                    breed = "Cockatoo";   
+
+                    return new Bird(breed, "2 years", "Medium", "White", "15-20 years", "Male",800, "Medium", "Seeds and fruits"); 
+
+                case 2: 
+
+                    breed = "Finch"; 
+
+                    return new Bird(breed, "1 year", "Small", "Yellow", "5-10 years", "Female", 50, "Low", "Seeds"); 
+
+                case 3: 
+
+                    breed = "Budgie"; 
+
+                    return new Bird(breed, "1 year", "Small", "Green", "5-10 years", "Male", 40, "Medium", "Seeds and fruits");  
+
+                default:  
+
+                    return nullptr; 
+
+            }  
+
+        } else if (categoryChoice == 2) { 
+
+            cout << "Choose a breed:\n 1. Reef Horn Bird\n 2. Domestic Duck\n 3. Mallard Duck "; 
+
+            int breedChoice; 
+
+            cin >> breedChoice; 
+
+            switch (breedChoice) {  
+
+  
+
+                case 1: 
+
+                    breed = "Reef Horn Bird"; 
+
+                    return new Bird(breed, "2 years", "Medium", "Blue", "10-15 years", "Female",300, "Medium", "Seeds and insects");  
+
+                case 2:  
+
+                    breed = "Domestic Duck";  
+
+                    return new Bird(breed, "3 years", "Large", "White", "5-10 years", "Male", 200, "Low", "Grains and greens");  
+
+                case 3:   
+
+                    breed = "Mallard Duck";   
+
+                    return new Bird(breed, "2 years", "Medium", "Brown", "5-10 years", "Female",250, "Medium", "Grains and aquatic plants");  
+
+                default:   
+
+                    return nullptr;  
+
+            }  
+
+        }  
+
+    } else if (petChoice == 5) {   
+
+        cout << "Choose a breed:\n 1. Spotted Pond\n 2. Red Eared Slider\n 3. Wood Turtle ";  
+
+        int breedChoice;  
+
+        cin >> breedChoice;  
+
+        string breed;  
+
+        switch (breedChoice) {  
+
+  
+
+            case 1:   
+
+                breed = "Spotted Pond";   
+
+                return new Turtle(breed, "5 years", "Medium", "Green", "20-30 years", "Male",50, "50 gallons", "Vegetables and pellets");  
+
+            case 2:   
+
+                breed = "Red Eared Slider";  
+
+                return new Turtle(breed, "3 years", "Medium", "Green", "20-30 years", "Female",70, "75 gallons", "Pellets and greens");  
+
+            case 3:   
+
+                breed = "Wood Turtle";  
+
+                return new Turtle(breed, "10 years", "Medium", "Brown", "30-40 years", "Male",80, "60 gallons", "Fruits and vegetables"); 
+
+            default:   
+
+            return nullptr;  
+
+        }  
+
+  
+
+    } else if (petChoice == 6) {   
+
+        cout << "Choose a breed:\n 1. Indian Star\n 2. Leopard Tortoise\n 3. Desert Tortoise ";  
+
+        int breedChoice;  
+
+        cin >> breedChoice;  
+
+        string breed;  
+
+        switch (breedChoice) {  
+
+            case 1:   
+
+                breed = "Indian Star";   
+
+                return new Tortoise(breed, "10 years", "Large", "Black with yellow", "50+ years", "Male",400, "40 gallons");  
+
+            case 2:   
+
+                breed = "Leopard Tortoise";   
+
+                return new Tortoise(breed, "8 years", "Large", "Yellow", "50+ years", "Female",350, "40 gallons");  
+
+            case 3:   
+
+                breed = "Desert Tortoise";   
+
+                return new Tortoise(breed, "12 years", "Medium", "Gray", "50+ years", "Male",300, "40 gallons");  
+
+            default:   
+
+                return nullptr;  
+
+        }  
+
+    } else if (petChoice == 0) {  
+
+        return nullptr;  
+
+    }  
+
+    return nullptr;   
+
+}  
+
+int main() {  
+
+  
+
+    while (true) {  
+
+        Pet* pet = createPet();  
+
+        if (!pet) {  
+
+            cout << "Exiting..Thank you!" << endl;  
+
+            break;  
+
+        }  
+
+        pet->displayInitialInfo();  
+
+        string confirmation;  
+
+        cout << "Do you like this choice? (y/n): ";  
+
+        cin >> confirmation;  
+
+        if (confirmation == "y"||confirmation=="Y") {  
+
+            pet->displayAdditionalInfo();  
+
+            cout << "Price: $" << pet->getPrice() << endl;  
+
+            cout << "Do you want to adopt this pet? (y/n): ";  
+
+            string adoptconfirmation;  
+
+            cin >> adoptconfirmation;  
+
+            if (adoptconfirmation=="y"||adoptconfirmation=="Y") {  
+
+                cout << "\nThey have found their happy place..Thanks to you!\n" << endl;  
+
+            } else {  
+
+                cout << "Pet adoption cancelled." << endl;  
+
+            }  
+
+        } else {  
+
+            cout << "Pet adoption cancelled." << endl;  
+
+        }  
+
+        delete pet;   
+
+    }  
+
+    return 0;  
+
+}
